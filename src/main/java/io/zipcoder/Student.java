@@ -46,8 +46,9 @@ public class Student {
     public void addExamScore(double examScore){
         examScores.add(examScore);
     }
+
     public double getAverageExamScore(){
-        int sum=0;
+        double sum=0;
         for(int i=0;i<examScores.size();i++){
             sum+=examScores.get(i);
         }
