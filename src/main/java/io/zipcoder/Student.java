@@ -46,12 +46,15 @@ public class Student {
     public void addExamScore(double examScore){
         examScores.add(examScore);
     }
-    public int getAverageExamScore(){
+    public double getAverageExamScore(){
         int sum=0;
         for(int i=0;i<examScores.size();i++){
-            sum+=i;
+            sum+=examScores.get(i);
         }
-    return sum/examScores.size();
+        double n=examScores.size();
+        double value=sum/n;
+        System.out.print(value);
+    return value;
     }
 
 }

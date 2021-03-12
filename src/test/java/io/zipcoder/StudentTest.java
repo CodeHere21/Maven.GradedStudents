@@ -229,4 +229,81 @@ public class StudentTest {
 
 
         Assert.assertNotEquals("jhffh", expectedArrayString);}
+        @Test
+    public void testGetNumberOfExamsTaken(){
+            String firstName = "Steve";
+            String lastName = "Jobs";
+            Double[] newArr = {190.0, 180.0, 200.0, 183.0};
+            String newArrStr=Arrays.toString(newArr);
+            int expected= newArr.length;
+
+            Student studentZero = new Student(firstName, lastName, newArr);
+            int actual=studentZero.getNumberOfExamsTaken();
+
+            Assert.assertEquals(expected,actual);
+        }
+        @Test
+    public void testNegativeGetNumberofExamsTaken(){
+            String firstName = "Steve";
+            String lastName = "Jobs";
+            Double[] newArr = {190.0, 180.0, 200.0, 183.0};
+            String newArrStr=Arrays.toString(newArr);
+            int expected= newArr.length;
+
+            Student studentZero = new Student(firstName, lastName, newArr);
+            int actual=studentZero.getNumberOfExamsTaken();
+
+            Assert.assertNotEquals(8,actual);
+        }
+
+        @Test
+        public void testAddExamScore() {
+            String firstName = "Steve";
+            String lastName = "Jobs";
+            Double[] newArr = {190.0, 180.0, 200.0, 183.0};
+            String newArrStr = Arrays.toString(newArr);
+            double examScore=250.0;
+            Student studentZero = new Student(firstName, lastName, newArr);
+            studentZero.addExamScore(examScore);
+            String actual=studentZero.getExamScores();
+            String expected="[190.0, 180.0, 200.0, 183.0, 250.0]";
+            Assert.assertEquals(expected,actual);
+
+        }
+        @Test
+        public void testNegativeAddExamScore() {
+            String firstName = "Steve";
+            String lastName = "Jobs";
+            Double[] newArr = {190.0, 180.0, 200.0, 183.0};
+            String newArrStr = Arrays.toString(newArr);
+            double examScore=250.0;
+            Student studentZero = new Student(firstName, lastName, newArr);
+            studentZero.addExamScore(examScore);
+            String actual=studentZero.getExamScores();
+            String expected="[190.0, 180.0, 200.0, 183.0, 250.0]";
+            Assert.assertNotEquals("hghgh",actual);
+        }
+        @Test
+    public void testGetAverageExamScore(){
+            String firstName = "Steve";
+            String lastName = "Jobs";
+            Double[] newArr = {190.0, 180.0, 200.0, 183.0};
+            String newArrStr = Arrays.toString(newArr);
+            Student studentZero=new Student(firstName,lastName,newArr);
+            double actual=studentZero.getAverageExamScore();
+            double expected=188.25;
+            Assert.assertEquals(expected,actual,0.0001);
+        }
+    @Test
+    public void testNegativeGetAverageExamScore(){
+        String firstName = "Steve";
+        String lastName = "Jobs";
+        Double[] newArr = {190.0, 180.0, 200.0, 183.0};
+        String newArrStr = Arrays.toString(newArr);
+        Student studentZero=new Student(firstName,lastName,newArr);
+        double actual=studentZero.getAverageExamScore();
+        double expected=188.25;
+        Assert.assertNotEquals(120,actual,0.0001);
+    }
+
 }
