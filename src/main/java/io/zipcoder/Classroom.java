@@ -30,13 +30,16 @@ public class Classroom {
         double value=sum/n;
         return value;
         }
+
     public Student[] getStudents(){
         return students;
     }
 
     public void addStudent(Student[] studentArr, Student studentToAdd){
-        int i=studentArr.length;
-        studentArr[i]=studentToAdd;
+        Student[] newArrToAdd=new Student[studentArr.length+1];
+                System.arraycopy(studentArr,0,newArrToAdd,0,studentArr.length);
+        newArrToAdd[studentArr.length]=studentToAdd;
+        System.out.println(newArrToAdd);
     }
 //    public void removeStudent(String firstName, String lastName){
 //            Student studentZero=new Student(firstName,lastName,null);

@@ -67,21 +67,22 @@ public class ClassroomTest {
                 Student studentThree = new Student("Ashley", "Smart", studentThreeScores);
 
                 Student[] arrayOfStudents = {studentOne,studentTwo,studentThree};
-                System.out.println("arrayOfStudents"+arrayOfStudents);
+
                 Double[] studentFourScores={120.0, 270.0, 76.8, 128.3};
                 Student studentFour= new Student("Lena","Litouka",studentFourScores);
 
-                Classroom classroomZero = new Classroom(arrayOfStudents);
+                Student[] expected= {studentOne, studentTwo, studentThree, studentFour};
+
+                Classroom classroomZero = new Classroom(expected);
               //  Double actual = classroomZero.getAverageExamScoreInClassroom(arrayOfStudents);
                 //System.out.println(studentOne.getAverageExamScore());
                 //Double expected = ((studentOne.getAverageExamScore()+studentTwo.getAverageExamScore()+studentThree.getAverageExamScore()))/3;
 
-                Student[] newArrayOfStudents= {studentOne, studentTwo, studentThree, studentFour};
-                System.out.println("newArayOfStudents:"+newArrayOfStudents);
                 classroomZero.addStudent(arrayOfStudents, studentFour);
                 Student[] actual=classroomZero.getStudents();
-                System.out.println("actual"+actual);
-                Assert.assertEquals(newArrayOfStudents, actual);
+
+               Assert.assertEquals(expected, actual);
+
 
         }
 
